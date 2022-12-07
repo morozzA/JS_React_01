@@ -7,8 +7,9 @@ export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,

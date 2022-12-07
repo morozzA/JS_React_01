@@ -1,20 +1,22 @@
 import PropTypes from 'prop-types';
 import FriendListItem from './FriendListItem';
 import friends from './friends.json';
+import { FriendList, Item, StatusOff, StatusOn } from './FriendListApp.styled';
 
 export default function FriendListApp() {
   return (
-    <ul className="friendList">
+    <FriendList>
       {friends.map(friend => (
-        <li key={friend.id} className="item">
+        <Item key={friend.id}>
+          {friend.isOnline ? <StatusOn /> : <StatusOff />}
           <FriendListItem
             avatar={friend.avatar}
             name={friend.name}
             isOnline={friend.isOnline}
           />
-        </li>
+        </Item>
       ))}
-    </ul>
+    </FriendList>
   );
 }
 
